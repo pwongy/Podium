@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorCardBackground"
+    tools:context=".QuizActivityFacebook">
+
+    <RelativeLayout
+        android:id="@+id/score_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:elevation="4dp"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/score_bar_vertical_padding"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingBottom="@dimen/score_bar_vertical_padding">
+
+        <!--Score info-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true">
+
+            <!--Previous score-->
+            <TextView
+                android:id="@+id/last_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:textSize="@dimen/score_text_size_supp"
+                android:textColor="@android:color/primary_text_dark" />
+            <TextView
+                android:id="@+id/label_last"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/score_bar_prev_label"
+                android:textColor="@android:color/primary_text_dark" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true">
+            <!--High score-->
+            <TextView
+                android:id="@+id/high_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:textSize="@dimen/score_text_size_supp"
+                android:textColor="@android:color/primary_text_dark" />
+            <TextView
+                android:id="@+id/label_high"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/score_bar_high_label"
+                android:textColor="@android:color/primary_text_dark" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <!--Current score-->
+    <TextView
+        android:id="@+id/current_score_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="@dimen/score_text_size_main"
+        android:textColor="@android:color/primary_text_dark"
+        android:gravity="center"
+        android:elevation="@dimen/score_circle_elevation"
+        android:background="@drawable/score_circle" />
+
+    <!--Main content-->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/score_bar"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:gravity="center"
+        android:background="@color/colorCardBackground" >
+
+        <!--Top card-->
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="1dp"
+            android:clickable="true"
+            android:onClick="compareItems"
+            android:foreground="?android:attr/selectableItemBackground" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
+                android:padding="@dimen/quiz_card_padding">
+
+                <LinearLayout
+                    android:id="@+id/image_set_1"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_centerHorizontal="true">
+
+                    <ImageView
+                        android:id="@+id/image_11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/quiz_card_emoji_height"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitXY" />
+
+                    <ImageView
+                        android:id="@+id/image_12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/quiz_card_emoji_height"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitXY" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/label_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/image_set_1"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/quiz_card_label_margin"
+                    android:text="Label 1"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:gravity="center_horizontal" />
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <!--Bottom card-->
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:clickable="true"
+            android:onClick="compareItems"
+            android:foreground="?android:attr/selectableItemBackground" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
+                android:padding="@dimen/quiz_card_padding">
+
+                <LinearLayout
+                    android:id="@+id/image_set_2"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_centerHorizontal="true">
+
+                    <ImageView
+                        android:id="@+id/image_21"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/quiz_card_emoji_height"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitXY" />
+
+                    <ImageView
+                        android:id="@+id/image_22"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/quiz_card_emoji_height"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitXY" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/label_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/image_set_2"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/quiz_card_label_margin"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center_horizontal"
+                    android:text="Label 2"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+
+</RelativeLayout>

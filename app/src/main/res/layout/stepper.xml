@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:text="3 days ago"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteY="16dp"
+        tools:layout_editor_absoluteX="16dp"
+        android:id="@+id/textView2"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:padding="@dimen/md_button_padding_vertical"
+        android:background="@color/colorAccent"
+        android:textColor="?android:attr/textColorPrimaryInverse"
+        android:elevation="@dimen/cardview_default_elevation" />
+</android.support.constraint.ConstraintLayout>
